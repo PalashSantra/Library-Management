@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "b65d2a98-6e18-4696-ab3b-68421fc78ac1",
+		"name": "LIBMGMTSYS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"isbn\": \"1235-12343-23223-433434\",\n    \"bookname\": \"Java Complete Reference\",\n    \"author\": \"Herbert Schield\",\n    \"edition\": \"2nd\",\n    \"price\": \"700\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/book/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"book",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add multiple",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"isbn\": \"1235-12343-23223-43354645634\",\n        \"bookname\": \"Java2 Complete Reference\",\n        \"author\": \"Herbert Schield\",\n        \"edition\": \"2nd\",\n        \"price\": \"700\"\n    },\n    {\n        \"isbn\": \"1235-12343-23223-43343434242342342\",\n        \"bookname\": \"Java Complete Reference\",\n        \"author\": \"\",\n        \"edition\": \"2nd\",\n        \"price\": \"700\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/book/add-multiple",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"book",
+						"add-multiple"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/book/list",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"book",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view book",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:8082/book/view/1235-12343-23223-433434",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"book",
+						"view",
+						"1235-12343-23223-433434"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Issue book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "isbn",
+							"value": "1235-12343-23223-433434",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8082/book/issue",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"book",
+						"issue"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view issued book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/book/issue-history",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"book",
+						"issue-history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"admin\",\n    \"password\":\"admin\",\n    \"roles\":[\n        \"ROLE_ADMIN\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/user/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/user/signmein",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"user",
+						"signmein"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
